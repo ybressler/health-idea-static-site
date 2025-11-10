@@ -7,7 +7,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
 
         const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+
+        // If href is just "#", scroll to top
+        if (targetId === '#') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
 
         const targetElement = document.querySelector(targetId);
 
