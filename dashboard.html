@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Care Journey - CareCompass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Navigation -->
+    <nav class="nav dashboard-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">CareCompass</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#messages" class="nav-icon">
+                        <span class="notification-dot"></span>
+                        Messages
+                    </a>
+                    <div class="user-menu">
+                        <div class="user-avatar">You</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-main">
+        <!-- Empathetic Welcome -->
+        <section class="welcome-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <div class="welcome-badge">We've got this</div>
+                    <h1 class="welcome-title">Finding your neck specialist</h1>
+                    <p class="welcome-message">We know you've been dealing with neck pain since your surfing fall, and between work and the kids, finding time to research doctors feels impossible. That's exactly what we're here for—let us handle the heavy lifting.</p>
+
+                    <div class="case-summary">
+                        <div class="case-icon">🏄</div>
+                        <div class="case-details">
+                            <div class="case-label">Your request</div>
+                            <div class="case-description">Neck pain specialist following surfing injury • Willing to travel for the right doctor • Quality over convenience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Map Visualization -->
+        <section class="map-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Your Doctor Matches</h2>
+                        <p class="section-subtitle">We've analyzed 127 specialists and found 5 excellent matches for your needs</p>
+                    </div>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #4ECDC4;"></div>
+                            <span>Available soon</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #FFB366;"></div>
+                            <span>Moderate wait</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #A78BFA;"></div>
+                            <span>Longer wait</span>
+                        </div>
+                        <div class="legend-item">
+                            <span style="margin-left: 0.5rem;">Size = Quality Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Bubble Map -->
+                <div class="bubble-map-container">
+                    <div class="bubble-map">
+                        <!-- Distance Rings -->
+                        <div class="distance-rings">
+                            <div class="ring ring-1">
+                                <span class="ring-label">5 mi</span>
+                            </div>
+                            <div class="ring ring-2">
+                                <span class="ring-label">15 mi</span>
+                            </div>
+                            <div class="ring ring-3">
+                                <span class="ring-label">30 mi</span>
+                            </div>
+                        </div>
+
+                        <!-- You are here marker -->
+                        <div class="you-marker">
+                            <div class="you-marker-pulse"></div>
+                            <div class="you-marker-dot"></div>
+                            <span class="you-marker-label">You</span>
+                        </div>
+
+                        <!-- Doctor Bubbles -->
+                        <div class="doctor-bubble" data-doctor="1" style="left: 48%; top: 22%;">
+                            <div class="bubble bubble-teal bubble-xl">
+                                <span class="bubble-initial">K</span>
+                            </div>
+                            <div class="bubble-tooltip">
+                                <strong>Dr. Karen Mitchell</strong>
+                                <span>4.8 mi • 2 weeks</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-bubble" data-doctor="2" style="left: 68%; top: 35%;">
+                            <div class="bubble bubble-coral bubble-lg">
+                                <span class="bubble-initial">R</span>
+                            </div>
+                            <div class="bubble-tooltip">
+                                <strong>Dr. Robert Chang</strong>
+                                <span>12.3 mi • 4 weeks</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-bubble" data-doctor="3" style="left: 32%; top: 45%;">
+                            <div class="bubble bubble-teal bubble-lg">
+                                <span class="bubble-initial">S</span>
+                            </div>
+                            <div class="bubble-tooltip">
+                                <strong>Dr. Sarah Williams</strong>
+                                <span>6.2 mi • 10 days</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-bubble" data-doctor="4" style="left: 75%; top: 58%;">
+                            <div class="bubble bubble-purple bubble-md">
+                                <span class="bubble-initial">M</span>
+                            </div>
+                            <div class="bubble-tooltip">
+                                <strong>Dr. Michael Torres</strong>
+                                <span>28.7 mi • 6 weeks</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-bubble" data-doctor="5" style="left: 25%; top: 68%;">
+                            <div class="bubble bubble-coral bubble-md">
+                                <span class="bubble-initial">E</span>
+                            </div>
+                            <div class="bubble-tooltip">
+                                <strong>Dr. Emily Rodriguez</strong>
+                                <span>9.1 mi • 3 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Details Cards -->
+        <section class="doctors-section">
+            <div class="container">
+                <div class="doctors-grid">
+                    <!-- Doctor 1 - Top Match -->
+                    <div class="doctor-card recommended" data-doctor="1">
+                        <div class="recommended-badge">Our Top Recommendation</div>
+                        <div class="doctor-header">
+                            <div class="doctor-avatar">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="Dr. Karen Mitchell" />
+                            </div>
+                            <div class="doctor-info">
+                                <h3>Dr. Karen Mitchell, MD</h3>
+                                <p class="doctor-specialty">Sports Medicine & Orthopedic Surgery</p>
+                                <p class="doctor-location">Bay Area Sports Medicine Center • 4.8 miles away</p>
+                            </div>
+                        </div>
+
+                        <div class="doctor-scores">
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Quality Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 96%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">9.6/10</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Patient Satisfaction</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 94%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">4.9/5</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Match Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 98%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">98%</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-highlights">
+                            <h4>Why we recommend Dr. Mitchell</h4>
+                            <ul>
+                                <li><strong>Specialist in sports injuries</strong> with 15+ years treating surf-related trauma</li>
+                                <li><strong>Outstanding outcomes</strong> for neck and cervical spine conditions</li>
+                                <li><strong>Close to your location</strong> and accepts your insurance</li>
+                                <li><strong>Available in 2 weeks</strong> - sooner than most specialists</li>
+                            </ul>
+                        </div>
+
+                        <div class="doctor-details-row">
+                            <div class="detail-chip">
+                                <span class="chip-icon">⏰</span>
+                                <span>Available: 2 weeks</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">✓</span>
+                                <span>Insurance: Verified</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">⭐</span>
+                                <span>247 reviews</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary btn-full">Book with Dr. Mitchell</button>
+                    </div>
+
+                    <!-- Doctor 2 -->
+                    <div class="doctor-card" data-doctor="3">
+                        <div class="doctor-header">
+                            <div class="doctor-avatar">
+                                <img src="https://i.pravatar.cc/150?img=45" alt="Dr. Sarah Williams" />
+                            </div>
+                            <div class="doctor-info">
+                                <h3>Dr. Sarah Williams, DO</h3>
+                                <p class="doctor-specialty">Physical Medicine & Rehabilitation</p>
+                                <p class="doctor-location">Pacific Spine & Wellness • 6.2 miles away</p>
+                            </div>
+                        </div>
+
+                        <div class="doctor-scores">
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Quality Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 92%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">9.2/10</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Patient Satisfaction</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 96%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">4.8/5</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Match Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 94%; background: #4ECDC4;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">94%</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-highlights">
+                            <h4>Key strengths</h4>
+                            <ul>
+                                <li>Holistic approach to neck and spine rehabilitation</li>
+                                <li>Highly rated for bedside manner and communication</li>
+                                <li>Fastest available appointment (10 days)</li>
+                            </ul>
+                        </div>
+
+                        <div class="doctor-details-row">
+                            <div class="detail-chip">
+                                <span class="chip-icon">⏰</span>
+                                <span>Available: 10 days</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">✓</span>
+                                <span>Insurance: Verified</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">⭐</span>
+                                <span>189 reviews</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary btn-full">View Details</button>
+                    </div>
+
+                    <!-- Doctor 3 -->
+                    <div class="doctor-card" data-doctor="2">
+                        <div class="doctor-header">
+                            <div class="doctor-avatar">
+                                <img src="https://i.pravatar.cc/150?img=33" alt="Dr. Robert Chang" />
+                            </div>
+                            <div class="doctor-info">
+                                <h3>Dr. Robert Chang, MD, PhD</h3>
+                                <p class="doctor-specialty">Neurosurgery & Spine Surgery</p>
+                                <p class="doctor-location">University Medical Center • 12.3 miles away</p>
+                            </div>
+                        </div>
+
+                        <div class="doctor-scores">
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Quality Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 98%; background: #FFB366;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">9.8/10</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Patient Satisfaction</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 90%; background: #FFB366;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">4.7/5</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-bar-container">
+                                    <div class="score-label">Match Score</div>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 90%; background: #FFB366;"></div>
+                                    </div>
+                                </div>
+                                <div class="score-value">90%</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-highlights">
+                            <h4>Key strengths</h4>
+                            <ul>
+                                <li>Top-tier specialist for complex cervical spine issues</li>
+                                <li>Research leader in minimally invasive techniques</li>
+                                <li>Longer wait time but exceptional expertise</li>
+                            </ul>
+                        </div>
+
+                        <div class="doctor-details-row">
+                            <div class="detail-chip">
+                                <span class="chip-icon">⏰</span>
+                                <span>Available: 4 weeks</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">✓</span>
+                                <span>Insurance: Verified</span>
+                            </div>
+                            <div class="detail-chip">
+                                <span class="chip-icon">⭐</span>
+                                <span>412 reviews</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary btn-full">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Support Section -->
+                <div class="support-card">
+                    <div class="support-content">
+                        <div class="support-icon">💬</div>
+                        <div>
+                            <h3>Not sure which doctor to choose?</h3>
+                            <p>Our care team is here to help. We can walk you through each option, answer questions, and book the appointment that feels right for you.</p>
+                        </div>
+                    </div>
+                    <button class="btn-secondary">Talk to Care Team</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
