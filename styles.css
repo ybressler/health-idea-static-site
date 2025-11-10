@@ -254,13 +254,13 @@ p {
     height: auto;
 }
 
-/* Soft, delicate aura animations - Enhanced for visibility */
+/* Soft, delicate aura animations - Extra pronounced */
 @keyframes float-gentle {
     0%, 100% {
         transform: translateY(0) scale(1);
     }
     50% {
-        transform: translateY(-15px) scale(1.05);
+        transform: translateY(-25px) scale(1.1);
     }
 }
 
@@ -269,61 +269,61 @@ p {
         transform: translateY(0) translateX(0) scale(1);
     }
     33% {
-        transform: translateY(-12px) translateX(8px) scale(1.03);
+        transform: translateY(-20px) translateX(15px) scale(1.08);
     }
     66% {
-        transform: translateY(8px) translateX(-8px) scale(0.98);
+        transform: translateY(15px) translateX(-15px) scale(0.95);
     }
 }
 
 @keyframes pulse-soft {
     0%, 100% {
-        opacity: 0.2;
-    }
-    50% {
-        opacity: 0.6;
-    }
-}
-
-@keyframes pulse-medium {
-    0%, 100% {
-        opacity: 0.3;
+        opacity: 0.15;
     }
     50% {
         opacity: 0.7;
     }
 }
 
-@keyframes pulse-light {
+@keyframes pulse-medium {
     0%, 100% {
-        opacity: 0.4;
+        opacity: 0.2;
     }
     50% {
         opacity: 0.8;
     }
 }
 
+@keyframes pulse-light {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
 /* Apply animations to each aura circle */
 .aura-bg {
-    animation: float-gentle 8s ease-in-out infinite;
+    animation: float-gentle 5s ease-in-out infinite;
     transform-origin: center;
 }
 
 .aura-inner {
-    animation: float-subtle 6s ease-in-out infinite, pulse-soft 5s ease-in-out infinite;
+    animation: float-subtle 4s ease-in-out infinite, pulse-soft 3.5s ease-in-out infinite;
     animation-delay: 0s, 0s;
     transform-origin: center;
 }
 
 .aura-middle {
-    animation: float-gentle 9s ease-in-out infinite, pulse-light 6s ease-in-out infinite;
-    animation-delay: 1.5s, 0.8s;
+    animation: float-gentle 6s ease-in-out infinite, pulse-light 4s ease-in-out infinite;
+    animation-delay: 1s, 0.5s;
     transform-origin: center;
 }
 
 .aura-outer {
-    animation: float-subtle 10s ease-in-out infinite, pulse-medium 7s ease-in-out infinite;
-    animation-delay: 3s, 1.5s;
+    animation: float-subtle 7s ease-in-out infinite, pulse-medium 5s ease-in-out infinite;
+    animation-delay: 2s, 1s;
     transform-origin: center;
 }
 
