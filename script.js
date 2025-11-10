@@ -104,10 +104,46 @@ animateElements.forEach(el => {
 });
 
 // ========================================
-// MOBILE MENU (for future enhancement)
+// MOBILE MENU TOGGLE
 // ========================================
 
-// This is a placeholder for when you want to add a mobile hamburger menu
-// For now, the navigation hides non-essential links on mobile
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const body = document.body;
+
+if (mobileMenuToggle && navLinks) {
+    // Toggle mobile menu
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) &&
+            !mobileMenuToggle.contains(e.target) &&
+            navLinks.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+}
 
 console.log('CareCompass website loaded successfully! 🎯');

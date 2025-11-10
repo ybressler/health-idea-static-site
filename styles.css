@@ -204,6 +204,29 @@ p {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile menu backdrop */
+.nav-links::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .nav-links.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .mobile-menu-toggle span {
@@ -767,6 +790,33 @@ p {
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
+    }
+
+    /* Better touch targets for mobile */
+    .btn-primary,
+    .btn-secondary {
+        min-height: 48px;
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+
+    .btn-large {
+        min-height: 56px;
+        padding: 1.125rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    /* Improve spacing on mobile */
+    .hero {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .section-title {
+        margin-bottom: var(--spacing-lg);
     }
 }
 
