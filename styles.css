@@ -254,6 +254,79 @@ p {
     height: auto;
 }
 
+/* Soft, delicate aura animations */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+@keyframes float-subtle {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    33% {
+        transform: translateY(-6px) translateX(3px);
+    }
+    66% {
+        transform: translateY(4px) translateX(-3px);
+    }
+}
+
+@keyframes pulse-soft {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes pulse-medium {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes pulse-light {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Apply animations to each aura circle */
+.aura-bg {
+    animation: float-gentle 12s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.aura-inner {
+    animation: float-subtle 10s ease-in-out infinite, pulse-soft 8s ease-in-out infinite;
+    animation-delay: 0s, 0s;
+    transform-origin: center;
+}
+
+.aura-middle {
+    animation: float-gentle 14s ease-in-out infinite, pulse-light 10s ease-in-out infinite;
+    animation-delay: 2s, 1s;
+    transform-origin: center;
+}
+
+.aura-outer {
+    animation: float-subtle 16s ease-in-out infinite, pulse-medium 12s ease-in-out infinite;
+    animation-delay: 4s, 2s;
+    transform-origin: center;
+}
+
 /* ========================================
    SECTION STYLES
    ======================================== */
