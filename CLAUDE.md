@@ -49,6 +49,41 @@ When making design changes:
 4. **Preserve smooth animations** - Transitions should be subtle and purposeful
 5. **Stay true to the color palette** - Don't introduce new colors without approval
 
+## Animation Guidelines - The Sweet Spot
+
+**Philosophy**: Animations should be clearly visible and engaging while maintaining the soft, calming healthcare aesthetic. They should feel alive and dynamic without being jarring or overwhelming.
+
+**Hero Aura Animation Parameters** (Current optimal settings):
+
+```css
+Movement:
+- Vertical float: 15-25px
+- Horizontal drift: 15px
+- Scale variation: 0.95x to 1.1x
+
+Opacity:
+- Pulse ranges: 0.15 to 0.9 (dramatic breathing effect)
+- Different ranges per layer for depth
+
+Timing:
+- Animation speeds: 4-7 seconds
+- Staggered delays: 0.5-2s offsets between layers
+- Easing: ease-in-out for smooth, natural motion
+```
+
+**Key Learnings**:
+- **Too subtle**: Initial animations (8px movement, 12-16s duration) were barely noticeable
+- **Sweet spot**: Current settings provide clear visual interest without overwhelming
+- **Balance**: Large movement + fast timing + dramatic opacity = engaging but still calming
+- **Layering**: Multiple circles with different timings create organic, flowing motion
+
+**When adjusting animations**:
+- Test visibility immediately - animations should be obvious on first view
+- Maintain the "breathing" quality through opacity pulses
+- Keep scale changes to preserve the soft, organic feel
+- Use 4-7 second ranges for perceivable but smooth motion
+- Always use ease-in-out for healthcare-appropriate gentleness
+
 ## Project Structure
 ```
 .
